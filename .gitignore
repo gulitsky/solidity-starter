@@ -1,0 +1,11 @@
+/node_modules/
+
+# Buidler files
+/artifacts/
+/cache/
+
+# Typechain artifacts
+/typechain/
+
+# Config file
+.env
