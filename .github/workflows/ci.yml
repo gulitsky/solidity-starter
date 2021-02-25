@@ -1,0 +1,73 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          # cache: yarn
+          node-version: lts/*
+
+      - name: Read Node.js version
+        id: node-version
+        run: |
+          echo "::set-output name=version::$(node --version)"
+
+      - name: Get Yarn cache directory path
+        id: yarn-cache-directory-path
+        run: |
+          echo "::set-output name=cache-directory-path::$(yarn config get cacheFolder)"
+
+      - name: Restore Yarn cache
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-directory-path.outputs.cache-directory-path }}
+          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-${{ hashFiles('**/yarn.lock', '**/.yarnrc.yml') }}
+          restore-keys: |
+            yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-
+            yarn-cache-directory-os-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
+      - name: Lint Solidity and TypeScript code
+        run: |
+          yarn run lint
+
+      - name: Profile gas usage
+        run: |
+          yarn run test
+        env:
+          CI: 1
+          REPORT_GAS: true
+
+      - name: Upload gas reports to CodeChecks
+        run: |
+          yarn run codechecks
+        env:
+          CC_SECRET: ${{ secrets.CODE_CHECKS_SECRET }}
+
+      - name: Test the contracts and run code coverage
+        run: |
+          yarn run coverage
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info

@@ -1,0 +1,3 @@
+name: Continuous Delivery
+
+on: workflow_dispatch
