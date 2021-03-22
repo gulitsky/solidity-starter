@@ -3,7 +3,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomiclabs/hardhat-ethers";
 import "hardhat-typechain";
 
-import "./src/type-extensions";
+import "./types/type-extensions";
 import "./tasks";
 
 dotenv.config();
@@ -39,6 +39,11 @@ const config: HardhatUserConfig = {
     hardhat: {
       accounts: {
         mnemonic: MNEMONIC,
+      },
+      nativeCurrency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
       },
     },
   },

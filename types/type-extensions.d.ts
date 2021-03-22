@@ -1,6 +1,6 @@
 import "hardhat/types/config";
 
-import { Currency } from "./types";
+import { Currency } from ".";
 
 declare module "hardhat/types/config" {
   interface HardhatNetworkUserConfig {
@@ -9,6 +9,7 @@ declare module "hardhat/types/config" {
 
   interface HttpNetworkUserConfig {
     nativeCurrency?: Currency;
+    faucet?: string;
   }
 
   interface HardhatNetworkConfig {
@@ -17,5 +18,6 @@ declare module "hardhat/types/config" {
 
   interface HttpNetworkConfig {
     nativeCurrency?: Currency;
+    faucet?: string;
   }
 }

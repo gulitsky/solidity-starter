@@ -12,5 +12,5 @@
     "useDefineForClassFields": true
   },
   "files": ["./hardhat.config.ts"],
-  "include": ["./scripts/**/*.ts", "./tests/**/*.ts"]
+  "include": ["./deploy/**/*.ts", "./scripts/**/*.ts", "./tests/**/*.ts"]
 }
