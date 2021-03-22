@@ -13,7 +13,7 @@ const {
   INFURA_JWT,
   MNEMONIC,
   NODE_ENV = "development",
-  SOLIDITY_VERSION = "0.8.1",
+  SOLIDITY_VERSION = "0.8.2",
 } = process.env;
 
 const isProduction = () => NODE_ENV === "production";
