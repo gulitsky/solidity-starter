@@ -13,7 +13,9 @@ const {
   INFURA_JWT,
   MNEMONIC,
   NODE_ENV = "development",
-  SOLIDITY_VERSION = "0.8.2",
+  OPTIMIZE = "true",
+  OPTIMIZER_RUNS = "200",
+  SOLIDITY_VERSION = "0.8.3",
 } = process.env;
 
 const isProduction = () => NODE_ENV === "production";
@@ -24,25 +26,46 @@ if (!MNEMONIC) {
   );
   process.exit(1);
 }
+const accounts = {
+  mnemonic: MNEMONIC,
+};
 
 const config: HardhatUserConfig = {
   solidity: {
     version: SOLIDITY_VERSION,
     settings: {
       optimizer: {
-        enabled: isProduction(),
-        runs: 200,
+        enabled: OPTIMIZE && OPTIMIZE === "true" ? true : false,
+        runs: parseInt(OPTIMIZER_RUNS),
       },
     },
   },
   networks: {
     hardhat: {
-      accounts: {
-        mnemonic: MNEMONIC,
-      },
+      accounts,
       nativeCurrency: {
         name: "Ether",
         symbol: "ETH",
+        decimals: 18,
+      },
+    },
+    mainnet: {
+      url: "https://cloudflare-eth.com",
+      chainId: 1,
+      accounts,
+      nativeCurrency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+    },
+    bsc: {
+      url: "https://bsd-dataseed.binance.org",
+      chainId: 56,
+      accounts,
+      nativeCurrency: {
+        name: "Binance Smart Chain Native Token",
+        symbol: "BNB",
         decimals: 18,
       },
     },

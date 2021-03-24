@@ -1,14 +1,15 @@
 {
   "[solidity]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [120]
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "files.exclude": {
     "**/.editorconfig": true,
-    "**/.git": true,
-    "**/.pretterrc": true,
+    "**/.git*": true,
+    "**/.*rc": true,
     "**/*.lock": true,
     "**/artifacts": true,
     "**/cache": true,
@@ -16,7 +17,6 @@
     "**/typechain": true
   },
   "solidity.enabledAsYouTypeCompilationErrorCheck": false,
-  "solidity.enableLocalNodeCompiler": false,
   "solidity.formatter": "none",
   "solidity.linter": "solhint",
   "solidity.packageDefaultDependenciesContractsDirectory": "./contracts/",
