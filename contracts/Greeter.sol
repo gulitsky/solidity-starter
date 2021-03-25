@@ -1,5 +1,4 @@
 pragma solidity 0.8.3;
-pragma experimental SMTChecker;
 
 import "hardhat/console.sol";
 

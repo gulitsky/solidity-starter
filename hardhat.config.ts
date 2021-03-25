@@ -2,6 +2,8 @@ import * as dotenv from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomiclabs/hardhat-ethers";
 import "hardhat-typechain";
+import "@nomiclabs/hardhat-waffle";
+import "hardhat-jest-plugin";
 
 import "./types/type-extensions";
 import "./tasks";
@@ -69,6 +71,7 @@ const config: HardhatUserConfig = {
         decimals: 18,
       },
     },
+    "bsc-testnet": {},
   },
   paths: {
     tests: "./tests/",
