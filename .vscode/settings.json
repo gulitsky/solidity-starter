@@ -7,9 +7,9 @@
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "files.exclude": {
+    "**/.*rc": true,
     "**/.editorconfig": true,
     "**/.git*": true,
-    "**/.*rc": true,
     "**/*.lock": true,
     "**/artifacts": true,
     "**/cache": true,

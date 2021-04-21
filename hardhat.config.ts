@@ -71,7 +71,6 @@ const config: HardhatUserConfig = {
         decimals: 18,
       },
     },
-    "bsc-testnet": {},
   },
   paths: {
     tests: "./tests/",
