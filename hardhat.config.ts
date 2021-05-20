@@ -10,17 +10,11 @@ import "./tasks";
 
 dotenv.config();
 const {
-  INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
-  INFURA_PROJECT_SECRET,
-  INFURA_JWT,
   MNEMONIC,
-  NODE_ENV = "development",
   OPTIMIZE = "true",
   OPTIMIZER_RUNS = "200",
   SOLIDITY_VERSION = "0.8.4",
 } = process.env;
-
-const isProduction = () => NODE_ENV === "production";
 
 if (!MNEMONIC) {
   console.error(
