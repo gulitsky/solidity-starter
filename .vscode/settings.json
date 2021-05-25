@@ -16,6 +16,7 @@
     "**/node_modules": true,
     "**/typechain": true
   },
+  "mochaExplorer.files": "tests/**/*.ts",
   "solidity.enabledAsYouTypeCompilationErrorCheck": false,
   "solidity.formatter": "none",
   "solidity.linter": "solhint",

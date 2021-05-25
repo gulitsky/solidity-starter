@@ -1,30 +1,24 @@
 {
   "author": "Andrey Gulitsky",
-  "homepage": "https://github.com/gulitsky/solidity-starter",
   "devDependencies": {
     "@ethereum-waffle/jest": "^3.2.2",
-    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@typechain/ethers-v5": "^7.0.0",
     "@typechain/hardhat": "^2.0.1",
-    "@types/jest": "^26.0.23",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
     "@types/node": "^15.6.1",
+    "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.2.0",
     "hardhat": "^2.3.0",
     "hardhat-deploy": "^0.7.9",
-    "hardhat-deploy-ethers": "^0.3.0-beta.7",
-    "hardhat-jest-plugin": "^0.0.4",
-    "hardhat-spdx-license-identifier": "^2.0.3",
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
+    "mocha": "^8.4.0",
     "prettier": "^2.3.0",
     "prettier-plugin-solidity": "^1.0.0-beta.10",
     "solhint": "^3.3.5",
-    "ts-generator": "^0.1.1",
-    "ts-jest": "^26.5.6",
-    "ts-morph": "^10.1.0",
     "ts-node": "^10.0.0",
     "typechain": "^5.0.0",
     "typescript": "^4.2.4"
@@ -34,13 +28,15 @@
     "npm": "please-use-yarn",
     "yarn": ">=1.22.5"
   },
+  "homepage": "https://github.com/gulitsky/solidity-starter",
   "license": "ISC",
   "private": true,
   "scripts": {
     "build": "yarn clean && yarn lint && yarn compile",
-    "compile": "hardhat compile",
     "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "deploy": "hardhat deploy",
     "lint": "solhint ./contracts/**/*.sol",
-    "test": "hardhat test:jest"
+    "test": "hardhat test"
   }
 }

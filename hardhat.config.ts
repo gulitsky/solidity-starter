@@ -3,7 +3,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
-import "hardhat-jest-plugin";
+import "hardhat-deploy";
 
 import "./types/type-extensions";
 import "./tasks";
@@ -45,7 +45,7 @@ const config: HardhatUserConfig = {
         decimals: 18,
       },
     },
-    mainnet: {
+    ethereum: {
       url: "https://cloudflare-eth.com",
       chainId: 1,
       accounts,
@@ -71,6 +71,11 @@ const config: HardhatUserConfig = {
   },
   typechain: {
     target: "ethers-v5",
+  },
+  namedAccounts: {
+    deployer: {
+      default: 0,
+    },
   },
 };
 
