@@ -30,6 +30,9 @@ const config: HardhatUserConfig = {
   solidity: {
     version: SOLIDITY_VERSION,
     settings: {
+      metadata: {
+        bytecodeHash: "none",
+      },
       optimizer: {
         enabled: OPTIMIZE && OPTIMIZE === "true" ? true : false,
         runs: parseInt(OPTIMIZER_RUNS),
@@ -56,7 +59,7 @@ const config: HardhatUserConfig = {
       },
     },
     bsc: {
-      url: "https://bsd-dataseed.binance.org",
+      url: "https://bsc-dataseed.binance.org",
       chainId: 56,
       accounts,
       nativeCurrency: {
@@ -70,6 +73,7 @@ const config: HardhatUserConfig = {
     tests: "./tests/",
   },
   typechain: {
+    outDir: "./typechain",
     target: "ethers-v5",
   },
   namedAccounts: {

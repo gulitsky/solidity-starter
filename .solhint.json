@@ -1,13 +1,22 @@
 {
   "extends": "solhint:recommended",
+  "plugins": ["prettier"],
   "rules": {
-    "compiler-version": ["warn", "^0.8.0"],
+    "compiler-version": ["error", "^0.8.0"],
     "constructor-syntax": "error",
     "func-visibility": [
       "error",
       {
         "ignoreConstructors": true
       }
-    ]
+    ],
+    "imports-on-top": "error",
+    "no-inline-assembly": "off",
+    "not-rely-on-block-hash": "off",
+    "not-rely-on-time": "off",
+    "ordering": "error",
+    "prettier/prettier": ["error"],
+    "reentrancy": "error",
+    "state-visibility": "error"
   }
 }

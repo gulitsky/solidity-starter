@@ -1,6 +1,11 @@
 import "hardhat/types/config";
 
-import { Currency } from ".";
+export interface Currency {
+  address?: string;
+  name: string;
+  symbol: string;
+  decimals: number;
+}
 
 declare module "hardhat/types/config" {
   interface HardhatNetworkUserConfig {

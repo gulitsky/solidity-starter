@@ -18,8 +18,6 @@
   },
   "mochaExplorer.files": "tests/**/*.ts",
   "solidity.enabledAsYouTypeCompilationErrorCheck": false,
-  "solidity.formatter": "none",
-  "solidity.linter": "solhint",
   "solidity.packageDefaultDependenciesContractsDirectory": "./contracts/",
   "solidity.packageDefaultDependenciesDirectory": "./node_modules/",
   "typescript.enablePromptUseWorkspaceTsdk": true,
