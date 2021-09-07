@@ -5,7 +5,6 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-deploy";
 
-import "./types/type-extensions";
 import "./tasks";
 
 dotenv.config();

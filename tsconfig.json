@@ -1,20 +1,28 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "baseUrl": ".",
     "composite": false,
     "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "lib": ["ES2020"],
     "module": "CommonJS",
-    "moduleResolution": "Node",
+    "newLine": "LF",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "paths": {},
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,5 +30,5 @@
     "useDefineForClassFields": true
   },
   "files": ["./hardhat.config.ts"],
-  "include": ["./deploy/**/*.ts", "./scripts/**/*.ts", "./tests/**/*.ts"]
+  "include": ["./deploy/**/*.ts", "./scripts/**/*.ts", "./tasks/**/*.ts", "./tests/**/*.ts", "./typechain/**/*.ts"]
 }

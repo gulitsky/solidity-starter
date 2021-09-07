@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: ISC
-pragma solidity 0.8.4;
+pragma solidity 0.8.7;
 
 import "hardhat/console.sol";
+
+error ZeroLengthGreeting();
 
 contract Greeter {
     string private greeting;
@@ -12,11 +14,14 @@ contract Greeter {
     }
 
     function setGreeting(string memory _greeting) external {
+        if (bytes(_greeting).length == 0) {
+            revert ZeroLengthGreeting();
+        }
         console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
         greeting = _greeting;
     }
 
-    function greet() public view returns (string memory) {
+    function greet() external view returns (string memory) {
         return greeting;
     }
 }
