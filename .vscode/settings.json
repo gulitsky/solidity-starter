@@ -7,14 +7,14 @@
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "files.exclude": {
-    "**/.*rc": true,
-    "**/.editorconfig": true,
-    "**/.git*": true,
-    "**/*.lock": true,
-    "**/artifacts": true,
-    "**/cache": true,
-    "**/node_modules": true,
-    "**/typechain": true
+    "**/.*rc": false,
+    "**/.editorconfig": false,
+    "**/.git*": false,
+    "**/*.lock": false,
+    "**/artifacts": false,
+    "**/cache": false,
+    "**/node_modules": false,
+    "**/typechain": false
   },
   "mochaExplorer.files": "tests/**/*.ts",
   "solidity.enabledAsYouTypeCompilationErrorCheck": false,

@@ -1,11 +1,26 @@
-/node_modules/
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+node_modules/
 
-# Hardhat files
+# TypeScript artifacts
+/dist/
+
+# Hardhat artifacts
 /artifacts/
 /cache/
 
 # Typechain artifacts
 /typechain/
 
-# Config file
+# dotenv config file
 .env
+
+# solidity-coverage artifacts
+/coverage/
+/coverage.json
