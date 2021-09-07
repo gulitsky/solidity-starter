@@ -1,12 +1,12 @@
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
-import "hardhat-contract-sizer";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
+import chalk from "chalk";
 
 import "./tasks";
 
@@ -17,12 +17,12 @@ const {
   INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
   MNEMONIC,
   REPORT_GAS,
-  SOLIDITY_VERSION = "0.8.7",
+  SOLIDITY_VERSION = "0.8.4",
 } = process.env;
 
 if (!MNEMONIC) {
   console.error(
-    "✖ Please set your MNEMONIC in environment variable or .env file",
+    chalk`{red ✖} Please set your {italic MNEMONIC} in environment variable or {bold .env} file`,
   );
   process.exit(1);
 }

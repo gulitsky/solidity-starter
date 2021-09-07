@@ -2,6 +2,11 @@
   "extends": "solhint:recommended",
   "plugins": ["prettier"],
   "rules": {
+    "avoid-call-value": "error",
+    "avoid-sha3": "error",
+    "avoid-suicide": "error",
+    "avoid-throw": "error",
+    "code-complexity": ["error", 7],
     "compiler-version": ["error", "^0.8.0"],
     "constructor-syntax": "error",
     "func-visibility": [
@@ -11,11 +16,14 @@
       }
     ],
     "imports-on-top": "error",
+    "max-line-length": ["error", 120],
+    "no-complex-fallback": "error",
     "no-inline-assembly": "off",
     "not-rely-on-block-hash": "off",
     "not-rely-on-time": "off",
     "ordering": "error",
     "prettier/prettier": ["error"],
+    "reason-string": "off",
     "reentrancy": "error",
     "state-visibility": "error"
   }

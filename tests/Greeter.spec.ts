@@ -5,7 +5,17 @@ const HELLO_WORLD_EN = "Hello, world!";
 const HELLO_WORLD_RU = "Привет, мир!";
 
 describe("Greeter", () => {
-  it("Should return the new greeting once it's changed", async () => {
+  it("should revert when the new greeting has zero length", async () => {
+    const Greeter = await ethers.getContractFactory("Greeter");
+    const greeter = await Greeter.deploy(HELLO_WORLD_EN);
+    await greeter.deployed();
+
+    await expect(greeter.setGreeting("")).to.be.revertedWith(
+      "ZeroLengthGreeting",
+    );
+  });
+
+  it("should return the new greeting once it's changed", async () => {
     const Greeter = await ethers.getContractFactory("Greeter");
     const greeter = await Greeter.deploy(HELLO_WORLD_EN);
     await greeter.deployed();

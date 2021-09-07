@@ -1,6 +1,6 @@
 import { DeployFunction } from "hardhat-deploy/types";
 
-const HELLO_WORLD = "Hello, world!";
+const HELLO_WORLD_RU = "Привет, мир!";
 
 const deploy: DeployFunction = async function ({
   deployments,
@@ -14,7 +14,7 @@ const deploy: DeployFunction = async function ({
 
   await deploy("Greeter", {
     from: deployer,
-    args: [HELLO_WORLD],
+    args: [HELLO_WORLD_RU],
   });
 };
 export default deploy;
