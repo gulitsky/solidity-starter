@@ -16,7 +16,7 @@
     "fs-extra": "^10.0.0",
     "hardhat": "^2.3.0",
     "hardhat-deploy": "^0.7.10",
-    "mocha": "^8.4.0",
+    "mocha": "^9.1.1",
     "prettier": "^2.3.0",
     "prettier-plugin-solidity": "^1.0.0-beta.11",
     "solhint": "^3.3.6",
