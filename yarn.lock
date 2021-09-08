@@ -653,6 +653,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gulitsky/solidity-starter@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@gulitsky/solidity-starter@workspace:."
+  dependencies:
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.10"
+    "@nomiclabs/hardhat-waffle": ^2.0.1
+    "@swc/core": ^1.2.84
+    "@swc/helpers": ^0.2.13
+    "@typechain/ethers-v5": ^7.0.1
+    "@typechain/hardhat": ^2.3.0
+    "@types/chai": ^4.2.21
+    "@types/fs-extra": ^9.0.12
+    "@types/mocha": ^9.0.0
+    "@types/node": ^16.7.13
+    chai: ^4.3.4
+    chalk: ^4.1.2
+    dotenv: ^10.0.0
+    ethereum-waffle: ^3.4.0
+    ethers: ^5.4.6
+    fs-extra: ^10.0.0
+    hardhat: ^2.6.3
+    hardhat-deploy: ^0.9.1
+    hardhat-gas-reporter: ^1.0.4
+    mocha: ^9.1.1
+    prettier: ^2.3.2
+    prettier-plugin-solidity: ^1.0.0-beta.17
+    solhint: ^3.3.6
+    solhint-plugin-prettier: ^0.0.5
+    solidity-coverage: ^0.7.17
+    ts-node: ^10.2.1
+    tslib: ^2.3.1
+    typechain: ^5.1.2
+    typescript: ~4.4.2
+  languageName: unknown
+  linkType: soft
+
 "@napi-rs/triples@npm:^1.0.3":
   version: 1.0.3
   resolution: "@napi-rs/triples@npm:1.0.3"
@@ -6277,9 +6313,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hardhat@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "hardhat@npm:2.6.2"
+"hardhat@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "hardhat@npm:2.6.3"
   dependencies:
     "@ethereumjs/block": ^3.4.0
     "@ethereumjs/blockchain": ^5.4.0
@@ -6330,7 +6366,7 @@ fsevents@~2.3.2:
     ws: ^7.4.6
   bin:
     hardhat: internal/cli/cli.js
-  checksum: 6d9273d625e5a51daeab10f9b02d8a2e31ea98820f1f503cd8276be2e1b4733761fc8ddec34e8898831c922f83d997874633d913851cb457851dde7a7b8a2697
+  checksum: c2eac0a52710f17c1de26245a93a36ca396fb870df2407fb8d256bb3a5ac63219cb78b00fef9a6584f789c13d8e26f300e2c4d1b26a64a422d2c3499755d52d5
   languageName: node
   linkType: hard
 
@@ -10524,42 +10560,6 @@ resolve@1.17.0:
   checksum: 2601225df0fe7aa3b497b33a12fd9fbaf8fb1d2989ecc5c091918ed93ee77d1c3fab20ddd3891a9ca66a8ba66d993e6079be6fb31f450fcf38ba30873102ca46
   languageName: node
   linkType: hard
-
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.10"
-    "@nomiclabs/hardhat-waffle": ^2.0.1
-    "@swc/core": ^1.2.84
-    "@swc/helpers": ^0.2.13
-    "@typechain/ethers-v5": ^7.0.1
-    "@typechain/hardhat": ^2.3.0
-    "@types/chai": ^4.2.21
-    "@types/fs-extra": ^9.0.12
-    "@types/mocha": ^9.0.0
-    "@types/node": ^16.7.13
-    chai: ^4.3.4
-    chalk: ^4.1.2
-    dotenv: ^10.0.0
-    ethereum-waffle: ^3.4.0
-    ethers: ^5.4.6
-    fs-extra: ^10.0.0
-    hardhat: ^2.6.2
-    hardhat-deploy: ^0.9.1
-    hardhat-gas-reporter: ^1.0.4
-    mocha: ^9.1.1
-    prettier: ^2.3.2
-    prettier-plugin-solidity: ^1.0.0-beta.17
-    solhint: ^3.3.6
-    solhint-plugin-prettier: ^0.0.5
-    solidity-coverage: ^0.7.17
-    ts-node: ^10.2.1
-    tslib: ^2.3.1
-    typechain: ^5.1.2
-    typescript: ~4.4.2
-  languageName: unknown
-  linkType: soft
 
 "run-async@npm:^2.2.0":
   version: 2.4.1
