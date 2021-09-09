@@ -3,10 +3,11 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
+import "hardhat-packager";
 import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
-import dotenv from "dotenv";
 import chalk from "chalk";
+import dotenv from "dotenv";
 
 import "./tasks";
 
@@ -16,7 +17,7 @@ const {
   ETHERSCAN_API_KEY,
   INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
   MNEMONIC,
-  REPORT_GAS,
+  REPORT_GAS = "false",
   SOLIDITY_VERSION = "0.8.4",
 } = process.env;
 
@@ -38,7 +39,7 @@ const config: HardhatUserConfig = {
   gasReporter: {
     coinmarketcap: COIN_MARKET_CAP_API_KEY,
     currency: "USD",
-    enabled: REPORT_GAS && REPORT_GAS === "true" ? true : false,
+    enabled: REPORT_GAS === "true" ? true : false,
     src: "./contracts/",
   },
   solidity: {
