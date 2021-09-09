@@ -1,5 +1,8 @@
 name: Continuous Integration
 
+env:
+  MNEMONIC: ${{ secrets.MNEMONIC }}
+
 on:
   pull_request:
     branches:
