@@ -5,6 +5,10 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "editor.rulers": [80],
   "files.exclude": {
     "**/.*rc": false,
