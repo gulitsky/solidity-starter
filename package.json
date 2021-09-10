@@ -27,7 +27,7 @@
     "hardhat-packager": "^1.1.0",
     "mocha": "^9.1.1",
     "prettier": "^2.3.2",
-    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
     "solhint": "^3.3.6",
     "solhint-plugin-prettier": "^0.0.5",
     "solidity-coverage": "^0.7.17",
