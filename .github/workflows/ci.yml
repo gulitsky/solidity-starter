@@ -18,17 +18,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Read Node.js version
-        id: node-version
-        run: |
-          echo "::set-output name=version::$(cat ./.nvmrc)"
-
       - name: Install Node.js
-        id: node
         uses: actions/setup-node@v2
         with:
           # cache: yarn
-          node-version: ${{ steps.node-version.outputs.node-version }}
+          node-version: lts/*
+
+      - name: Read Node.js version
+        id: node-version
         run: |
           echo "::set-output name=version::$(node --version)"
 
