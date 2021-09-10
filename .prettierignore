@@ -1,0 +1,16 @@
+# Yarn
+.yarn/
+
+# TypeScript artifacts
+dist/
+
+# Hardhat artifacts
+artifacts/
+cache/
+
+# Typechain artifacts
+typechain/
+
+# solidity-coverage artifacts
+coverage/
+coverage.json

@@ -1,6 +1,7 @@
 name: Continuous Integration
 
 env:
+  COIN_MARKET_CAP_API_KEY: ${{ secrets.COIN_MARKET_CAP_API_KEY }}
   MNEMONIC: ${{ secrets.MNEMONIC }}
 
 on:
@@ -39,7 +40,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-directory-path.outputs.cache-directory-path }}
-          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-${{ hashFiles('**/yarn.lock', '**/.yarnrc.yml') }}
           restore-keys: |
             yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-
             yarn-cache-directory-os-${{ runner.os }}-
@@ -51,6 +52,19 @@ jobs:
       - name: Lint Solidity and TypeScript code
         run: |
           yarn run lint
+
+      - name: Profile gas usage
+        run: |
+          yarn run test
+        env:
+          CI: 1
+          REPORT_GAS: true
+
+      - name: Upload gas reports to CodeChecks
+        run: |
+          yarn run codechecks
+        env:
+          CC_SECRET: ${{ secrets.CODE_CHECKS_SECRET }}
 
       - name: Test the contracts and run code coverage
         run: |

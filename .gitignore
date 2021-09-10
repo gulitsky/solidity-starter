@@ -9,18 +9,21 @@
 node_modules/
 
 # TypeScript artifacts
-/dist/
+dist/
 
 # Hardhat artifacts
-/artifacts/
-/cache/
+artifacts/
+cache/
 
 # Typechain artifacts
-/typechain/
+typechain/
 
 # dotenv config file
 .env
 
 # solidity-coverage artifacts
-/coverage/
-/coverage.json
+coverage/
+coverage.json
+
+# eth-gas-reporter artifacts
+gasReporterOutput.json

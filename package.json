@@ -4,6 +4,7 @@
   "version": "0.1.0-canary",
   "description": "",
   "devDependencies": {
+    "@codechecks/client": "^0.1.11",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.10",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@swc/core": "^1.2.85",
@@ -53,12 +54,12 @@
   "scripts": {
     "build": "hardhat compile",
     "clean": "hardhat clean",
-    "coverage": "hardhat coverage",
+    "coverage": "hardhat coverage --solcoverjs ./.solcover.js --temp ./artifacts/ --testfiles \"./test/**/*.ts\"",
     "deploy": "hardhat deploy",
+    "lint:sol": "solhint --config ./.solhint.json --max-warnings 0 \"./contracts/**/*.sol\"",
     "lint": "yarn run lint:sol && yarn prettier:check",
-    "lint:sol": "solhint --config ./.solhint.json --max-warning 0 \"./contracts/**/*.sol\"",
-    "prettier": "prettier --config ./.prettierrc --write \"**/*.{js,json,md,sol,ts}\"",
-    "prettier:check": "prettier --check --config ./.prettierrc --write \"**/*.{js,json,md,sol,ts}\"",
+    "prettier:check": "prettier --check --config ./.prettierrc  \"./**/*.{js,json,md,sol,ts,yml}\"",
+    "prettier": "prettier --config ./.prettierrc --write \"./**/*.{js,json,md,sol,ts,yml}\"",
     "rebuild": "yarn run build --force",
     "test": "hardhat test",
     "typechain": "hardhat typechain"

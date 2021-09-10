@@ -1,14 +1,13 @@
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
+import chalk from "chalk";
+import dotenv from "dotenv";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "hardhat-packager";
-import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
-import chalk from "chalk";
-import dotenv from "dotenv";
-
+import "solidity-coverage";
 import "./tasks";
 
 dotenv.config();
