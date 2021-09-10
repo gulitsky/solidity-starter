@@ -1,5 +1,2 @@
-branches:
-  - main
-
 checks:
   - name: eth-gas-reporter/codechecks
