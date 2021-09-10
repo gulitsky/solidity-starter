@@ -12,17 +12,25 @@ on:
       - main
 
 jobs:
-  ci:
+  continuous-integration:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
+      - name: Read Node.js version
+        id: node-version
+        run: |
+          echo "::set-output name=version::$(cat ./.nvmrc)"
+
       - name: Install Node.js
+        id: node
         uses: actions/setup-node@v2
         with:
           # cache: yarn
-          node-version: lts/*
+          node-version: ${{ steps.node-version.outputs.node-version }}
+        run: |
+          echo "::set-output name=version::$(node --version)"
 
       - name: Get Yarn cache directory path
         id: yarn-cache-directory-path
@@ -34,9 +42,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-directory-path.outputs.cache-directory-path }}
-          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ env.node-version }}-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node.outputs.version }}-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
           restore-keys: |
-            yarn-cache-directory-os-${{ runner.os }}-node-${{ env.node-version }}-
+            yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node.outputs.version }}-
             yarn-cache-directory-os-${{ runner.os }}-
 
       - name: Install dependencies
