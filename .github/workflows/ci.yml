@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache-directory-path.outputs.cache-directory-path }}
-          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node.outputs.version }}-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+          key: yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
           restore-keys: |
             yarn-cache-directory-os-${{ runner.os }}-node-${{ steps.node-version.outputs.version }}-
             yarn-cache-directory-os-${{ runner.os }}-
