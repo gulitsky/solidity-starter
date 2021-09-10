@@ -697,20 +697,20 @@ __metadata:
     "@types/chai": ^4.2.21
     "@types/fs-extra": ^9.0.12
     "@types/mocha": ^9.0.0
-    "@types/node": ^16.9.0
+    "@types/node": ^16.9.1
     chai: ^4.3.4
     chalk: ^4.1.2
     dotenv: ^10.0.0
     ethereum-waffle: ^3.4.0
     ethers: ^5.4.6
     fs-extra: ^10.0.0
-    hardhat: ^2.6.3
+    hardhat: ^2.6.4
     hardhat-deploy: ^0.9.1
     hardhat-gas-reporter: ^1.0.4
     hardhat-packager: ^1.1.0
     mocha: ^9.1.1
-    prettier: ^2.3.2
-    prettier-plugin-solidity: ^1.0.0-beta.17
+    prettier: ^2.4.0
+    prettier-plugin-solidity: ^1.0.0-beta.18
     solhint: ^3.3.6
     solhint-plugin-prettier: ^0.0.5
     solidity-coverage: ^0.7.17
@@ -1390,10 +1390,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.9.0":
-  version: 16.9.0
-  resolution: "@types/node@npm:16.9.0"
-  checksum: cb210bcfe201d6506f1ace9e940cf45307c1fc845ad1e67bb4a2dc39a2e3441382973e96b78568844c6f324cd0d2dddcb07639313d75cdb1ac5776c9255349fb
+"@types/node@npm:^16.9.1":
+  version: 16.9.1
+  resolution: "@types/node@npm:16.9.1"
+  checksum: 41afcf183a22d59323a0199dd7e0f46591247f45fc08a4434edb26d56dc279ae4fdb80f37989ddd7a0f45e3857c4933e6e82057ede09c5a829f77e373e680375
   languageName: node
   linkType: hard
 
@@ -6448,7 +6448,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hardhat@npm:^2.5.0, hardhat@npm:^2.6.3":
+"hardhat@npm:^2.5.0":
   version: 2.6.3
   resolution: "hardhat@npm:2.6.3"
   dependencies:
@@ -6502,6 +6502,63 @@ fsevents@~2.3.2:
   bin:
     hardhat: internal/cli/cli.js
   checksum: c2eac0a52710f17c1de26245a93a36ca396fb870df2407fb8d256bb3a5ac63219cb78b00fef9a6584f789c13d8e26f300e2c4d1b26a64a422d2c3499755d52d5
+  languageName: node
+  linkType: hard
+
+"hardhat@npm:^2.6.4":
+  version: 2.6.4
+  resolution: "hardhat@npm:2.6.4"
+  dependencies:
+    "@ethereumjs/block": ^3.4.0
+    "@ethereumjs/blockchain": ^5.4.0
+    "@ethereumjs/common": ^2.4.0
+    "@ethereumjs/tx": ^3.3.0
+    "@ethereumjs/vm": ^5.5.2
+    "@ethersproject/abi": ^5.1.2
+    "@sentry/node": ^5.18.1
+    "@solidity-parser/parser": ^0.11.0
+    "@types/bn.js": ^5.1.0
+    "@types/lru-cache": ^5.1.0
+    abort-controller: ^3.0.0
+    adm-zip: ^0.4.16
+    ansi-escapes: ^4.3.0
+    chalk: ^2.4.2
+    chokidar: ^3.4.0
+    ci-info: ^2.0.0
+    debug: ^4.1.1
+    enquirer: ^2.3.0
+    env-paths: ^2.2.0
+    eth-sig-util: ^2.5.2
+    ethereum-cryptography: ^0.1.2
+    ethereumjs-abi: ^0.6.8
+    ethereumjs-util: ^7.1.0
+    find-up: ^2.1.0
+    fp-ts: 1.19.3
+    fs-extra: ^7.0.1
+    glob: ^7.1.3
+    https-proxy-agent: ^5.0.0
+    immutable: ^4.0.0-rc.12
+    io-ts: 1.10.4
+    lodash: ^4.17.11
+    merkle-patricia-tree: ^4.2.0
+    mnemonist: ^0.38.0
+    mocha: ^7.1.2
+    node-fetch: ^2.6.0
+    qs: ^6.7.0
+    raw-body: ^2.4.1
+    resolve: 1.17.0
+    semver: ^6.3.0
+    slash: ^3.0.0
+    solc: 0.7.3
+    source-map-support: ^0.5.13
+    stacktrace-parser: ^0.1.10
+    true-case-path: ^2.2.1
+    tsort: 0.0.1
+    uuid: ^3.3.2
+    ws: ^7.4.6
+  bin:
+    hardhat: internal/cli/cli.js
+  checksum: 8884e64734e5b3ab7c2b127f9abe26ed532f3ae7289139bfd2163ba8b01d230a30fe59ecc52ea114a66377e469d5b6fd1f5befaf63c273ac10bd96bd939d3f82
   languageName: node
   linkType: hard
 
@@ -9925,9 +9982,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier-plugin-solidity@npm:^1.0.0-beta.17":
-  version: 1.0.0-beta.17
-  resolution: "prettier-plugin-solidity@npm:1.0.0-beta.17"
+"prettier-plugin-solidity@npm:^1.0.0-beta.18":
+  version: 1.0.0-beta.18
+  resolution: "prettier-plugin-solidity@npm:1.0.0-beta.18"
   dependencies:
     "@solidity-parser/parser": ^0.13.2
     emoji-regex: ^9.2.2
@@ -9937,7 +9994,7 @@ fsevents@~2.3.2:
     string-width: ^4.2.2
   peerDependencies:
     prettier: ^2.3.0
-  checksum: 9ae8cef7cb50629932259627f761b184dbf9000f209a4b2a1be133dac34908dfef9ec26e6b5fd98f0a2f3ffe15dacbff534c9a069984e392fbe342bf246100e8
+  checksum: 9082f949275b5b4b8e78cb70b384e759b29f6b7ffaf35ec42db400ed0b4ce93c1453cffcb98c8d071dd8578a3aed2420000674c8aedaf8bb486b3bbc9d7d9457
   languageName: node
   linkType: hard
 
@@ -9950,12 +10007,21 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.1.2, prettier@npm:^2.3.2":
+"prettier@npm:^2.1.2":
   version: 2.3.2
   resolution: "prettier@npm:2.3.2"
   bin:
     prettier: bin-prettier.js
   checksum: 17ce5784ac67621c292df58e2da60b2ee150c2d6aebea22a6ad9e52fcd6a5e66c349d0a8436ea3bd8ff9d778920a5f68000d7625b74f43558718a49755aa5259
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "prettier@npm:2.4.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: ac1bf07566dad5f58469e6d8a954bd5c0f833935597deb00330e9f673e14e4cf81e07dee7eff5776c0edebe11358d199f332d9940be40c8b455516034e553ce0
   languageName: node
   linkType: hard
 
