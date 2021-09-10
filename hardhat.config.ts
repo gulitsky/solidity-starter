@@ -5,7 +5,6 @@ import chalk from "chalk";
 import dotenv from "dotenv";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
-import "hardhat-packager";
 import { HardhatUserConfig } from "hardhat/config";
 import "solidity-coverage";
 import "./tasks";
