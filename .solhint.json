@@ -3,12 +3,18 @@
   "plugins": ["prettier"],
   "rules": {
     "avoid-call-value": "error",
+    "avoid-low-level-calls": "off",
     "avoid-sha3": "error",
     "avoid-suicide": "error",
     "avoid-throw": "error",
-    "code-complexity": ["error", 7],
+    "code-complexity": ["warn", 7],
     "compiler-version": ["error", "^0.8.0"],
+    "const-name-snakecase": "error",
     "constructor-syntax": "error",
+    "contract-name-camelcase": "error",
+    "event-name-camelcase": "error",
+    "func-name-mixedcase": "error",
+    "func-param-name-mixedcase": "error",
     "func-visibility": [
       "error",
       {
@@ -17,14 +23,19 @@
     ],
     "imports-on-top": "error",
     "max-line-length": ["error", 120],
+    "modifier-name-mixedcase": "error",
     "no-complex-fallback": "error",
+    "no-empty-blocks": "error",
     "no-inline-assembly": "off",
+    "no-unused-vars": "error",
     "not-rely-on-block-hash": "off",
     "not-rely-on-time": "off",
     "ordering": "error",
     "prettier/prettier": ["error"],
+    "private-vars-leading-underscore": "off",
     "reason-string": "off",
     "reentrancy": "error",
-    "state-visibility": "error"
+    "state-visibility": "error",
+    "visibility-modifier-order": "error"
   }
 }

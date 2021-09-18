@@ -11,6 +11,11 @@ error ZeroLengthGreeting();
 contract Greeter {
     string private greeting;
 
+    /// @dev Emitted when the greeting is changed.
+    /// @param greeting Previous greeting.
+    /// @param newGreeting New greeting.
+    event GreetingChanged(string greeting, string newGreeting);
+
     constructor(string memory _greeting) {
         console.log("Deploying a Greeter with greeting '%s'", _greeting);
         greeting = _greeting;
@@ -21,6 +26,7 @@ contract Greeter {
             revert ZeroLengthGreeting();
         }
         console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
+        emit GreetingChanged(greeting, _greeting);
         greeting = _greeting;
     }
 

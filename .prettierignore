@@ -14,3 +14,6 @@ typechain/
 # solidity-coverage artifacts
 coverage/
 coverage.json
+
+# hardhat-deploy artifacts
+deployments/
