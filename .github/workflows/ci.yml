@@ -1,9 +1,5 @@
 name: Continuous Integration
 
-env:
-  COIN_MARKET_CAP_API_KEY: ${{ secrets.COIN_MARKET_CAP_API_KEY }}
-  MNEMONIC: ${{ secrets.MNEMONIC }}
-
 on:
   pull_request:
     branches:

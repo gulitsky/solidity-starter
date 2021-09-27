@@ -1,1 +1,12 @@
-{}
+{
+  "name": "Solidity Starter",
+  "forwardPorts": [8545],
+  "extensions": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "hbenl.vscode-mocha-test-adapter",
+    "juanblanco.solidity",
+    "mikestead.dotenv",
+    "tintinweb.solidity-visual-auditor"
+  ]
+}

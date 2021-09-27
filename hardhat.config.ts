@@ -14,7 +14,7 @@ const {
   COIN_MARKET_CAP_API_KEY = "d25b5576-a4ee-41be-bb2b-aca2ba3ae5d8",
   ETHERSCAN_API_KEY,
   INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
-  MNEMONIC,
+  MNEMONIC = "overn merry manual oil detail fit pair boat possible pitch icon donkey",
   REPORT_GAS = "false",
   SOLIDITY_VERSION = "0.8.4",
 } = process.env;
