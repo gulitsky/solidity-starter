@@ -11,19 +11,27 @@
   },
   "editor.rulers": [80],
   "files.exclude": {
-    "**/.*rc": false,
-    "**/.editorconfig": false,
-    "**/.git*": false,
-    "**/*.lock": false,
-    "**/artifacts": false,
-    "**/cache": false,
-    "**/node_modules": false,
-    "**/typechain": false
+    "**/.*": true,
+    "**/*.lock": true,
+    "**/*.yml": true,
+    "**/artifacts": true,
+    "**/cache": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    "**/typechain": true,
+    "**/LICENSE": true,
+    "**/tsconfig.json": true
   },
-  "mochaExplorer.files": "tests/**/*.ts",
-  "solidity.enabledAsYouTypeCompilationErrorCheck": false,
-  "solidity.packageDefaultDependenciesContractsDirectory": "./contracts/",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/deployments": true
+  },
+  "mochaExplorer.files": "./tests/**/*.ts",
+  "mochaExplorer.require": "@swc/register",
+  "solidity.packageDefaultDependenciesContractsDirectory": "",
   "solidity.packageDefaultDependenciesDirectory": "./node_modules/",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.tsdk": "./node_modules/typescript/lib/"
+  "typescript.tsdk": "./node_modules/typescript/lib/",
+  "solidity.compilerOptimization": 800,
+  "solidity-va.test.defaultUnittestTemplate": "hardhat"
 }

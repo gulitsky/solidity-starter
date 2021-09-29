@@ -1,47 +1,13 @@
 {
   "tasks": [
     {
-      "detail": "Build the smart contracts with Hardhat",
+      "detail": "Compiles the entire project, building all artifacts.",
       "group": {
         "isDefault": true,
         "kind": "build"
       },
-      "label": "Compile",
-      "problemMatcher": [
-        {
-          "fileLocation": ["relative", "${workspaceFolder}"],
-          "owner": "solidity",
-          "pattern": [
-            {
-              "message": 2,
-              "regexp": "^\\w*(Exception|Error|Warning):\\s+(.*)$",
-              "severity": 1
-            },
-            {
-              "column": 3,
-              "file": 1,
-              "line": 2,
-              "regexp": "^\\s*-->\\s+(.*\\.sol):(\\d+):(\\d+):?$"
-            }
-          ]
-        },
-        {
-          "fileLocation": ["relative", "${workspaceFolder}"],
-          "owner": "solidity",
-          "pattern": [
-            {
-              "kind": "file",
-              "message": 2,
-              "regexp": "^(Exception|Error|Warning):\\s+(.*)$",
-              "severity": 1
-            },
-            {
-              "file": 1,
-              "regexp": "^\\s*-->\\s+(.*\\.sol)$"
-            }
-          ]
-        }
-      ],
+      "label": "🛠️ Build",
+      "problemMatcher": [],
       "script": "build",
       "type": "npm"
     },
@@ -49,8 +15,8 @@
       "type": "npm",
       "script": "clean",
       "problemMatcher": [],
-      "label": "Clean",
-      "detail": "Delete the smart contract artifacts and cache"
+      "label": "🧹 Clean",
+      "detail": "Clear the cache and delete all artifacts."
     }
   ],
   "version": "2.0.0"

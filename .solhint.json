@@ -1,5 +1,5 @@
 {
-  "extends": "solhint:recommended",
+  "extends": "solhint:default",
   "plugins": ["prettier"],
   "rules": {
     "avoid-call-value": "error",
@@ -7,7 +7,7 @@
     "avoid-sha3": "error",
     "avoid-suicide": "error",
     "avoid-throw": "error",
-    "code-complexity": ["warn", 7],
+    "check-send-result": "error",
     "compiler-version": ["error", "^0.8.0"],
     "const-name-snakecase": "error",
     "constructor-syntax": "error",
@@ -22,10 +22,7 @@
       }
     ],
     "imports-on-top": "error",
-    "max-line-length": ["error", 120],
     "modifier-name-mixedcase": "error",
-    "no-complex-fallback": "error",
-    "no-empty-blocks": "error",
     "no-inline-assembly": "off",
     "no-unused-vars": "error",
     "not-rely-on-block-hash": "off",
@@ -33,9 +30,9 @@
     "ordering": "error",
     "prettier/prettier": ["error"],
     "private-vars-leading-underscore": "off",
-    "reason-string": "off",
     "reentrancy": "error",
     "state-visibility": "error",
+    "var-name-mixedcase": "error",
     "visibility-modifier-order": "error"
   }
 }
