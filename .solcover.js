@@ -5,5 +5,5 @@ module.exports = {
   onIstanbulComplete: async () => {
     await emptyDir("./typechain");
   },
-  istanbulReporter: ["lcov"],
+  istanbulReporter: ["cobertura", "lcov"],
 };

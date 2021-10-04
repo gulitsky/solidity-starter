@@ -1,0 +1,28 @@
+include:
+  - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
+
+image: node:lts-alpine
+
+before_script:
+  - yarn install --immutable
+
+cache:
+  paths:
+    - ./.yarn/cache/
+
+stages:
+  - test
+  - deliver
+
+lint:
+  stage: test
+  script:
+    - yarn run lint
+
+coverage:
+  stage: test
+  script:
+    - yarn run coverage
+  artifacts:
+    reports:
+      cobertura: ./coverage/cobertura-coverage.xml

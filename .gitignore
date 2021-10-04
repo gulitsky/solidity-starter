@@ -27,3 +27,6 @@ coverage.json
 
 # eth-gas-reporter artifacts
 gasReporterOutput.json
+
+# OpenMetrics report
+metrics.txt
