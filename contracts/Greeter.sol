@@ -23,7 +23,7 @@ contract Greeter {
 
     function setGreeting(string memory _greeting) external {
         if (bytes(_greeting).length == 0) {
-            revert ZeroLengthGreeting();
+            revert GreeterZeroLengthGreeting();
         }
         console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
         emit GreetingChanged(greeting, _greeting);

@@ -15,7 +15,7 @@ describe("Greeter", () => {
 
   it("should revert when the new greeting has zero length", async () => {
     await expect(greeter.setGreeting("")).to.be.revertedWith(
-      "ZeroLengthGreeting",
+      "GreeterZeroLengthGreeting",
     );
   });
 
