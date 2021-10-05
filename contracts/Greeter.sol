@@ -4,7 +4,7 @@ pragma solidity 0.8.9;
 import "hardhat/console.sol";
 
 /// @dev Thrown when trying to set the greeting with zero length.
-error ZeroLengthGreeting();
+error GreeterZeroLengthGreeting();
 
 /// @title Simple greeter smart contract
 /// @author Andrey Gulitsky <angulitsky@gmail.com>

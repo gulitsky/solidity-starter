@@ -28,7 +28,8 @@
     "**/tsconfig.json": false,
     "**/.sol*": false,
     "**/.*ignore": false,
-    "**/metrics.txt": false
+    "**/metrics.txt": false,
+    "**/gasReporterOutput.json": false
   },
   "search.exclude": {
     "**/node_modules": true,
