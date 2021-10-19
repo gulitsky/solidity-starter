@@ -44,8 +44,14 @@ const quantile = (data: number[], q: number) => {
   if (sortData[base + 1] !== undefined) {
     return sortData[base]! + rest * (sortData[base + 1]! - sortData[base]!);
   } else {
-    return sortData[base];
+    return sortData[base]!;
   }
+};
+
+const iqr = (data: number[]) => {
+  const quantile1: number = quantile(data, 0.25);
+  const quantile3: number = quantile(data, 0.75);
+  return quantile3 - quantile1;
 };
 
 async function main(): Promise<void> {
@@ -120,6 +126,11 @@ async function main(): Promise<void> {
           `contract_function_gas_usage{contract="${contract}",function="${method}",quantile="0.75"} ${quantile(
             gasData,
             0.75,
+          )}`,
+        );
+        report.push(
+          `contract_function_gas_usage{contract="${contract}",function="${method}",iqr=1} ${iqr(
+            gasData,
           )}`,
         );
       }
