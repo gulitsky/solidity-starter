@@ -16,11 +16,15 @@ stages:
 
 lint:
   stage: test
+  tags:
+    - build-solidity
   script:
     - yarn run lint
 
 coverage:
   stage: test
+  tags:
+    - build-solidity
   script:
     - yarn run coverage
   artifacts:
