@@ -7,7 +7,7 @@ import "hardhat/console.sol";
 error GreeterZeroLengthGreeting();
 
 /// @title Simple greeter smart contract
-/// @author Andrey Gulitsky <angulitsky@gmail.com>
+/// @author Andrey Gulitsky <andrey@gulitsky.dev>
 contract Greeter {
     string private greeting;
 
