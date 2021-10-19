@@ -36,7 +36,17 @@ const sort = (data: number[]) => data.sort((a, b) => a - b);
 
 const sum = (data: number[]) => data.reduce((a, b) => a + b, 0);
 
-const quantile = (data: number[], q: number) => {};
+const quantile = (data: number[], q: number) => {
+  const sortData: number[] = sort(data);
+  const pos: number = (sortData.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  if (sortData[base + 1] !== undefined) {
+    return sortData[base]! + rest * (sortData[base + 1]! - sortData[base]!);
+  } else {
+    return sortData[base];
+  }
+};
 
 async function main(): Promise<void> {
   const now = Math.floor(Date.now() / 1000);
