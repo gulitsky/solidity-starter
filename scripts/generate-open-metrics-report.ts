@@ -1,4 +1,4 @@
-import { readJSON } from "fs-extra";
+import { outputFile, readJSON } from "fs-extra";
 
 interface Method {
   contract: string;
@@ -103,31 +103,33 @@ async function main(): Promise<void> {
         )}`,
       );
 
-      report.push(
-        `contract_function_gas_usage_sum{contract="${contract}",function="${method}",quantile="0.25"} ${quantile(
-          gasData,
-          0.25,
-        )}`,
-      );
-      report.push(
-        `contract_function_gas_usage_sum{contract="${contract}",function="${method}",quantile="0.5"} ${quantile(
-          gasData,
-          0.5,
-        )}`,
-      );
-      report.push(
-        `contract_function_gas_usage_sum{contract="${contract}",function="${method}",quantile="0.75"} ${quantile(
-          gasData,
-          0.75,
-        )}`,
-      );
+      if (gasData.length > 1) {
+        report.push(
+          `contract_function_gas_usage{contract="${contract}",function="${method}",quantile="0.25"} ${quantile(
+            gasData,
+            0.25,
+          )}`,
+        );
+        report.push(
+          `contract_function_gas_usage{contract="${contract}",function="${method}",quantile="0.5"} ${quantile(
+            gasData,
+            0.5,
+          )}`,
+        );
+        report.push(
+          `contract_function_gas_usage{contract="${contract}",function="${method}",quantile="0.75"} ${quantile(
+            gasData,
+            0.75,
+          )}`,
+        );
+      }
     }
 
     report.push(`contract_function_gas_usage_created ${now}`);
   }
 
   report.push("# EOF");
-  console.debug(report.join("\n"));
+  await outputFile("./metrics.txt", report.join("\n"));
 }
 
 main()
