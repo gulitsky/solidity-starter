@@ -21,6 +21,20 @@ lint:
   script:
     - yarn run lint
 
+profile-gas-usage:
+  stage: test
+  tags:
+    - build-solidity
+  variables:
+    CI: 1
+    REPORT_GAS: true
+  script:
+    - yarn run test
+    - yarn run hardhat run ./scripts/generate-open-metrics-report.ts
+  artifacts:
+    reports:
+      metrics: ./metrics.txt
+
 coverage:
   stage: test
   tags:
