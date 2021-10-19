@@ -32,6 +32,7 @@
     "**/gasReporterOutput.json": false
   },
   "search.exclude": {
+    "**/node_modules": true,
     "**/deployments": true
   },
   "mochaExplorer.files": "./tests/**/*.ts",
