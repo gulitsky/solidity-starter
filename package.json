@@ -58,7 +58,6 @@
   "scripts": {
     "build": "hardhat compile",
     "clean": "hardhat clean",
-    "commit": "cz",
     "coverage": "hardhat coverage --solcoverjs ./.solcover.js --temp ./artifacts/ --testfiles \"./test/**/*.ts\"",
     "deploy": "hardhat deploy",
     "lint:sol": "solhint --config ./.solhint.json --max-warnings 0 \"./contracts/**/*.sol\"",
