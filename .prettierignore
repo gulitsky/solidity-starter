@@ -17,3 +17,9 @@ coverage.json
 
 # hardhat-deploy artifacts
 deployments/
+
+# eth-gas-reporter artifacts
+gasReporterOutput.json
+
+# JUnit report
+test-results.xml
