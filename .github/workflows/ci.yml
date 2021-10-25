@@ -49,7 +49,7 @@ jobs:
         run: |
           yarn run lint
 
-      - name: Profile gas usage
+      - name: Profile gas
         run: |
           yarn run test
         env:

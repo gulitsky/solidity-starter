@@ -1,49 +1,76 @@
 include:
   - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
 
-image: node:lts-alpine
-
-before_script:
-  - yarn install --immutable
-
-cache:
-  paths:
-    - ./.yarn/cache/
+default:
+  image: nikolaik/python-nodejs:python3.10-nodejs14-alpine
+  tags:
+    - build-solidity
+  before_script:
+    - yarn install --immutable
+  cache:
+    key:
+      files:
+        - ./yarn.lock
+        - ./.yarnrrc.yml
+    paths:
+      - ./.yarn/cache/
 
 stages:
+  - build
   - test
-  - deliver
+  - release
+  - deploy
+
+build:
+  stage: build
+  script:
+    - yarn run build
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - ./artifacts/
+      - ./typechain/
+  cache:
+    paths:
+      - ./cache/
 
 lint:
   stage: test
-  tags:
-    - build-solidity
+  needs: []
   script:
     - yarn run lint
 
-profile-gas-usage:
+test:
   stage: test
-  tags:
-    - build-solidity
-  variables:
-    CI: "1"
-    REPORT_GAS: "true"
+  needs: ["build"]
+  dependencies:
+    - build
   script:
     - yarn run test
-  artifacts:
-    paths:
-      - ./metrics.txt
-    reports:
-      metrics: ./metrics.txt
-
-coverage:
-  stage: test
-  tags:
-    - build-solidity
-  script:
-    - yarn run coverage
   artifacts:
     when: always
     reports:
       junit: ./test-results.xml
+
+profile-gas:
+  stage: test
+  needs: ["build"]
+  dependencies:
+    - build
+  script:
+    - yarn run profile:gas
+  artifacts:
+    paths:
+      - ./gas-profile-report.txt
+    reports:
+      metrics: ./gas-profile-report.txt
+
+coverage:
+  stage: test
+  needs: ["build"]
+  script:
+    - yarn run coverage
+  coverage: '/^Statements\s*:\s*([^%]+)/'
+  artifacts:
+    reports:
       cobertura: ./coverage/cobertura-coverage.xml
