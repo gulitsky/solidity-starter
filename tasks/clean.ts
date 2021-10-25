@@ -9,6 +9,8 @@ task(
     await emptyDir("./coverage/");
     await remove("./coverage.json");
     await remove("./gasReporterOutput.json");
+    await remove("./gas-profile-report.txt");
+    await remove("./test-results.xml");
 
     return await runSuper(taskArgs);
   },

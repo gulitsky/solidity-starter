@@ -28,7 +28,7 @@
     "**/tsconfig.json": true,
     "**/.sol*": true,
     "**/.*ignore": true,
-    "**/metrics.txt": true,
+    "**/gas-profile-report.txt": true,
     "**/gasReporterOutput.json": true,
     "**/*.xml": true
   },

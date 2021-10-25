@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import { HardhatUserConfig } from "hardhat/config";
+import isCI from "is-ci";
 import "solidity-coverage";
 import "./tasks";
 
@@ -114,6 +115,12 @@ const config: HardhatUserConfig = {
   },
   paths: {
     tests: "./tests/",
+  },
+  mocha: {
+    reporter: isCI ? "mocha-junit-reporter" : "spec",
+    reporterOptions: {
+      jenkinsMode: true,
+    },
   },
   typechain: {
     target: "ethers-v5",

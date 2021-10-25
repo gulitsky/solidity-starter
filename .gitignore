@@ -29,7 +29,7 @@ coverage.json
 gasReporterOutput.json
 
 # OpenMetrics report
-metrics.txt
+gas-profile-report.txt
 
 # JUnit report
 test-results.xml
