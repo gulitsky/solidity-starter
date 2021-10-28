@@ -1,3 +1,10 @@
 name: Continuous Delivery
 
 on: workflow_dispatch
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
