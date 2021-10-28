@@ -37,6 +37,8 @@ build:
 lint:
   stage: test
   needs: []
+  cache:
+    policy: pull
   script:
     - yarn run lint
 
@@ -45,6 +47,8 @@ test:
   needs: ["build"]
   dependencies:
     - build
+  cache:
+    policy: pull
   script:
     - yarn run test
   artifacts:
@@ -57,6 +61,8 @@ profile-gas:
   needs: ["build"]
   dependencies:
     - build
+  cache:
+    policy: pull
   script:
     - yarn run profile:gas
   artifacts:
@@ -68,6 +74,8 @@ profile-gas:
 coverage:
   stage: test
   needs: ["build"]
+  cache:
+    policy: pull
   script:
     - yarn run coverage
   coverage: '/^Statements\s*:\s*([^%]+)/'
