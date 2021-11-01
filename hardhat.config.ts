@@ -5,6 +5,7 @@ import chalk from "chalk";
 import dotenv from "dotenv";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
+import "hardhat-packager";
 import { HardhatUserConfig } from "hardhat/config";
 import isCI from "is-ci";
 import "solidity-coverage";
@@ -124,11 +125,16 @@ const config: HardhatUserConfig = {
   },
   typechain: {
     target: "ethers-v5",
+    outDir: "./src/types/",
   },
   namedAccounts: {
     deployer: {
       default: 0,
     },
+  },
+  packager: {
+    contracts: ["Greeter"],
+    includeFactories: true,
   },
 };
 

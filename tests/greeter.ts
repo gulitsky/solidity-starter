@@ -1,6 +1,6 @@
+import { Greeter } from "!types/Greeter";
 import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
-import { Greeter } from "typechain";
 
 const HELLO_WORLD_EN: string = "Hello, world!";
 

@@ -9,6 +9,7 @@
 node_modules/
 
 # TypeScript artifacts
+*.tsbuildinfo
 dist/
 
 # Hardhat artifacts
@@ -16,7 +17,9 @@ artifacts/
 cache/
 
 # Typechain artifacts
-typechain/
+src/types/*
+!src/types/Greeter.d.ts
+!src/types/Greeter__factory.d.ts
 
 # dotenv config file
 .env
