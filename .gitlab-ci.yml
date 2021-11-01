@@ -34,7 +34,6 @@ build:
     expire_in: 1 hour
     paths:
       - ./artifacts/
-      - ./typechain/
 
 lint:
   stage: test

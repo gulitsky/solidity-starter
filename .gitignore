@@ -18,8 +18,9 @@ cache/
 
 # Typechain artifacts
 src/types/*
-!src/types/Greeter.d.ts
-!src/types/Greeter__factory.d.ts
+!src/types/common.ts
+!src/types/Greeter.ts
+!src/types/factories/Greeter__factory.ts
 
 # dotenv config file
 .env

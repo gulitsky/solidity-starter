@@ -39,7 +39,7 @@
     "**/deployments": true
   },
   "mochaExplorer.files": "./tests/**/*.ts",
-  "mochaExplorer.require": "@swc/register",
+  "mochaExplorer.require": "@swc-node/register",
   "solidity.packageDefaultDependenciesContractsDirectory": "",
   "solidity.packageDefaultDependenciesDirectory": "./node_modules/",
   "typescript.enablePromptUseWorkspaceTsdk": true,
