@@ -107,15 +107,39 @@ const config: HardhatUserConfig = {
       accounts,
       tags: ["staging", "testnet"],
     },
-    matic: {
-      url: "https://rpc-mainnet.matic.network",
+    avalanche: {
+      url: "https://api.avax.network/ext/bc/C/rpc",
+      chainId: 43114,
+      accounts,
+      tags: ["mainnet", "production"],
+    },
+    "avalanche-test": {
+      url: "https://api.avax-test.network/ext/bc/C/rpc",
+      chainId: 43113,
+      accounts,
+      tags: ["staging", "testnet"],
+    },
+    polygon: {
+      url: "https://polygon-rpc.com",
       chainId: 137,
       accounts,
       tags: ["mainnet", "production"],
     },
-    "matic-test": {
-      url: "https://rpc-mumbai.matic.today",
+    "polygon-test": {
+      url: "https://rpc-mumbai.maticvigil.com",
       chainId: 80001,
+      accounts,
+      tags: ["staging", "testnet"],
+    },
+    fantom: {
+      url: "https://rpc.ftm.tools",
+      chainId: 250,
+      accounts,
+      tags: ["mainnet", "production"],
+    },
+    "fantom-test": {
+      url: "https://rpc.testnet.fantom.network",
+      chainId: 4002,
       accounts,
       tags: ["staging", "testnet"],
     },
