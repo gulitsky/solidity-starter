@@ -6,16 +6,18 @@
     "declarationMap": true,
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
+    "exactOptionalPropertyTypes": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "lib": ["ES2017"],
-    "module": "CommonJS",
+    "module": "ES2015",
+    "moduleResolution": "Node",
     "newLine": "LF",
     "outDir": "./dist/",
     "paths": {
-      "!types/*": ["types/*"]
+      "#types/*": ["types/*"]
     },
     "resolveJsonModule": true,
     "rootDir": ".",

@@ -33,9 +33,9 @@ const accounts = {
 };
 
 const config: HardhatUserConfig = {
-  etherscan: {
+  /* etherscan: {
     apiKey: ETHERSCAN_API_KEY,
-  },
+  }, */
   gasReporter: {
     coinmarketcap: COIN_MARKET_CAP_API_KEY,
     currency: "USD",

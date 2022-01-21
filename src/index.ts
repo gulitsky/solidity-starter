@@ -1,1 +1,1 @@
-export { Greeter } from "./types/Greeter";
+export { Greeter } from "#types/Greeter";

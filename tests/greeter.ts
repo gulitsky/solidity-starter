@@ -1,4 +1,4 @@
-import { Greeter } from "!types/Greeter";
+import { Greeter } from "#types/Greeter";
 import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
 
