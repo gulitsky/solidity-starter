@@ -1,1 +1,1 @@
-# Solidity Starter
+# Solidity Template

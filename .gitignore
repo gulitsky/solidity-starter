@@ -9,7 +9,6 @@
 node_modules/
 
 # TypeScript artifacts
-*.tsbuildinfo
 dist/
 
 # Hardhat artifacts

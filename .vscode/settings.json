@@ -44,6 +44,5 @@
   "solidity.packageDefaultDependenciesDirectory": "./node_modules/",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "./node_modules/typescript/lib/",
-  "solidity.compilerOptimization": 800,
-  "solidity-va.test.defaultUnittestTemplate": "hardhat"
+  "solidity.compilerOptimization": 800
 }

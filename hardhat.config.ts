@@ -1,9 +1,7 @@
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
-import chalk from "chalk";
 import dotenv from "dotenv";
-import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "hardhat-packager";
 import { HardhatUserConfig } from "hardhat/config";
@@ -18,12 +16,12 @@ const {
   INFURA_PROJECT_ID = "84842078b09946638c03157f83405213",
   MNEMONIC = "overn merry manual oil detail fit pair boat possible pitch icon donkey",
   REPORT_GAS = "false",
-  SOLIDITY_VERSION = "0.8.10",
+  SOLIDITY_VERSION = "0.8.11",
 } = process.env;
 
 if (!MNEMONIC) {
   console.error(
-    chalk`{red ✖} Please set your {italic MNEMONIC} in environment variable or {bold .env} file`,
+    "Please set your MNEMONIC in environment variable or .env file",
   );
   process.exit(1);
 }
@@ -33,9 +31,6 @@ const accounts = {
 };
 
 const config: HardhatUserConfig = {
-  /* etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
-  }, */
   gasReporter: {
     coinmarketcap: COIN_MARKET_CAP_API_KEY,
     currency: "USD",
@@ -63,85 +58,71 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       accounts,
-      tags: ["local", "test"],
     },
     eth: {
       url: "https://cloudflare-eth.com",
       chainId: 1,
       accounts,
-      tags: ["mainnet", "production"],
     },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`,
       chainId: 3,
       accounts,
-      tags: ["staging", "testnet"],
     },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID}`,
       chainId: 4,
       accounts,
-      tags: ["staging", "testnet"],
     },
     goerli: {
       url: `https://goerli.infura.io/v3/${INFURA_PROJECT_ID}`,
       chainId: 5,
       accounts,
-      tags: ["staging", "testnet"],
     },
     kovan: {
       url: `https://kovan.infura.io/v3/${INFURA_PROJECT_ID}`,
       chainId: 42,
       accounts,
-      tags: ["staging", "testnet"],
     },
     bsc: {
       url: "https://bsc-dataseed.binance.org",
       chainId: 56,
       accounts,
-      tags: ["mainnet", "production"],
     },
     "bsc-test": {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
       accounts,
-      tags: ["staging", "testnet"],
     },
     avalanche: {
       url: "https://api.avax.network/ext/bc/C/rpc",
       chainId: 43114,
       accounts,
-      tags: ["mainnet", "production"],
     },
     "avalanche-test": {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       chainId: 43113,
       accounts,
-      tags: ["staging", "testnet"],
     },
     polygon: {
       url: "https://polygon-rpc.com",
       chainId: 137,
       accounts,
-      tags: ["mainnet", "production"],
     },
     "polygon-test": {
       url: "https://rpc-mumbai.maticvigil.com",
       chainId: 80001,
       accounts,
-      tags: ["staging", "testnet"],
     },
     fantom: {
       url: "https://rpc.ftm.tools",
       chainId: 250,
       accounts,
-      tags: ["mainnet", "production"],
     },
     "fantom-test": {
       url: "https://rpc.testnet.fantom.network",
       chainId: 4002,
       accounts,
-      tags: ["staging", "testnet"],
     },
   },
   paths: {
@@ -156,11 +137,6 @@ const config: HardhatUserConfig = {
   typechain: {
     target: "ethers-v5",
     outDir: "./src/types/",
-  },
-  namedAccounts: {
-    deployer: {
-      default: 0,
-    },
   },
   packager: {
     contracts: ["Greeter"],
